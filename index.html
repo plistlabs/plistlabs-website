@@ -553,15 +553,106 @@
       line-height: 1.6;
     }
 
+    /* Cookie Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #1f2937;
+      color: white;
+      padding: 20px;
+      z-index: 1000;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cookie-text {
+      flex: 1;
+    }
+
+    .cookie-text p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .cookie-text p:first-child {
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .cookie-text a {
+      color: #0066cc;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .cookie-buttons {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .cookie-accept,
+    .cookie-reject {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .cookie-accept {
+      background-color: #0066cc;
+      color: white;
+    }
+
+    .cookie-accept:hover {
+      background-color: #0052a3;
+    }
+
+    .cookie-reject {
+      background-color: #6b7280;
+      color: white;
+    }
+
+    .cookie-reject:hover {
+      background-color: #4b5563;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .benefits-grid {
         grid-template-columns: 1fr;
       }
-      .hero-content,
-      .about-content,
-      .footer-content {
-        grid-template-columns: 1fr;
+
+      .hero-image {
+        height: 300px;
+      }
+
+      .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cookie-buttons {
+        width: 100%;
+      }
+
+      .cookie-accept,
+      .cookie-reject {
+        flex: 1;
       }
 
       .hero h1 {

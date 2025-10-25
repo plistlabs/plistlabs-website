@@ -1,5 +1,19 @@
 <template>
   <div id="app">
+    <!-- Cookie Banner -->
+    <div v-if="!cookieConsent" class="cookie-banner">
+      <div class="cookie-content">
+        <div class="cookie-text">
+          <p><strong>🍪 Cookies & Datenschutz</strong></p>
+          <p>Wir verwenden Cookies und externe Dienste (Formspree) zur Verarbeitung von Kontaktanfragen. Lesen Sie unsere <a href="#" @click="showDatenschutz" style="color: #0066cc; text-decoration: underline;">Datenschutzerklärung</a>.</p>
+        </div>
+        <div class="cookie-buttons">
+          <button @click="acceptCookies" class="cookie-accept">Akzeptieren</button>
+          <button @click="rejectCookies" class="cookie-reject">Ablehnen</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Header -->
     <header>
       <div class="container">
@@ -52,7 +66,7 @@
       <div class="container">
         <h2 class="section-title">Unsere <span class="highlight">Services</span></h2>
         <p style="text-align: center; color: #6b7280; margin-bottom: 50px; font-size: 16px; max-width: 700px; margin-left: auto; margin-right: auto;">
-          Jeder Service ist speziell für die Anforderungen von Steuerberatungen entwickelt und lässt sich nahtlos in bestehende Systeme wie DATEV integrieren.
+          Jeder Service ist speziell für die Anforderungen von Steuerberatungen entwickelt und lässt sich nahtlos in bestehende Systeme integrieren.
         </p>
         <div class="services-grid">
           <div class="service-card" v-for="service in services" :key="service.id">
@@ -217,6 +231,9 @@
             <a href="mailto:info@plistlabs.at">info@plistlabs.at</a>
             <a href="tel:+43123456789">+43 1 234 56789</a>
             <p style="color: #9ca3af; margin-top: 10px; font-size: 14px;">Schweidlgasse 24<br>1020 Wien, Österreich</p>
+            <div style="margin-top: 15px; display: flex; gap: 15px;">
+              <a href="https://www.linkedin.com/in/danielplistiev/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="color: #0066cc; font-size: 24px; text-decoration: none; font-weight: bold;">in</a>
+            </div>
           </div>
           <div class="footer-section">
             <h4>Rechtliches</h4>
@@ -269,16 +286,17 @@
         <p>Wir erheben personenbezogene Daten nur, wenn Sie uns diese freiwillig mitteilen, beispielsweise über unser Kontaktformular. Dies umfasst: Name, E-Mail-Adresse, Telefonnummer, Unternehmensname und die von Ihnen eingegebene Nachricht.</p>
         <h3>3. Verwendung der Daten</h3>
         <p>Ihre Daten werden ausschließlich zur Beantwortung Ihrer Anfragen und zur Kontaktaufnahme verwendet. Wir geben Ihre Daten nicht an Dritte weiter und verwenden sie nicht für Marketingzwecke, sofern Sie dem nicht zugestimmt haben.</p>
-        <h3>4. Speicherung und Sicherheit</h3>
-        <p>Wir speichern Ihre Daten nur so lange, wie dies für die Beantwortung Ihrer Anfrage erforderlich ist. Ihre Daten werden mit angemessenen technischen und organisatorischen Maßnahmen geschützt.</p>
+        <h3>4. Speicherung und Sicherheit</h3>\n        <p>Wir speichern Ihre Daten nur so lange, wie dies für die Beantwortung Ihrer Anfrage erforderlich ist. Ihre Daten werden mit angemessenen technischen und organisatorischen Maßnahmen geschützt.</p>
         <h3>5. Ihre Rechte</h3>
         <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch bezüglich Ihrer personenbezogenen Daten. Sie können diese Rechte jederzeit ausüben, indem Sie uns kontaktieren.</p>
         <h3>6. Cookies</h3>
-        <p>Diese Website verwendet keine Tracking-Cookies oder Analyse-Tools. Technisch notwendige Cookies werden nicht verwendet.</p>
+        <p>Diese Website verwendet nur technisch notwendige Cookies zur Speicherung Ihrer Cookie-Einwilligung. Wir verwenden keine Tracking- oder Analyse-Cookies. Ihre Cookie-Einwilligung wird in Ihrem Browser gespeichert und kann jederzeit widerrufen werden.</p>
         <h3>7. Externe Dienste</h3>
-        <p>Das Kontaktformular nutzt Formspree.io zur E-Mail-Verarbeitung. Bitte beachten Sie die Datenschutzerklärung von Formspree.</p>
-        <h3>8. Kontakt und Beschwerden</h3>
-        <p>Bei Fragen zur Datenschutzerklärung oder zur Verarbeitung Ihrer Daten kontaktieren Sie uns unter: info@plistlabs.at</p>
+        <p>Das Kontaktformular nutzt <strong>Formspree.io</strong> zur E-Mail-Verarbeitung. Formspree ist ein europäischer Service, der DSGVO-konform arbeitet. Ihre Daten werden nur zur Verarbeitung Ihrer Anfrage verwendet. Weitere Informationen: <a href="https://formspree.io/legal/privacy-policy/" target="_blank">https://formspree.io/legal/privacy-policy/</a></p>
+        <h3>8. Soziale Medien</h3>
+        <p>Unsere Website verlinkt auf LinkedIn. Der Besuch dieser externen Seiten unterliegt deren Datenschutzrichtlinien. LinkedIn ist ein Service der LinkedIn Ireland Unlimited Company, die DSGVO-konform arbeitet.</p>
+        <h3>9. Kontakt und Beschwerden</h3>
+        <p>Bei Fragen zur Datenschutzerklärung oder zur Verarbeitung Ihrer Daten kontaktieren Sie uns unter: info@plistlabs.at<br><br>Bei Datenschutzbeschwerden können Sie sich an die Österreichische Datenschutzbehörde wenden: <a href="https://www.dsb.gv.at/" target="_blank">https://www.dsb.gv.at/</a></p>
       </div>
     </div>
   </div>
@@ -291,6 +309,7 @@ export default {
     return {
       showImpressumModal: false,
       showDatenschutzModal: false,
+      cookieConsent: localStorage.getItem('plistlabs-cookie-consent') !== null,
       isSubmitting: false,
       formMessage: '',
       formMessageType: '',
@@ -310,7 +329,7 @@ export default {
         {
           id: 2,
           title: '📄 Belegverarbeitung ist zeitintensiv',
-          description: 'Manuelle Eingabe von Belegen in DATEV kostet Stunden pro Woche. Fehler sind vorprogrammiert.'
+          description: 'Manuelle Eingabe von Belegen kostet Stunden pro Woche. Fehler sind vorprogrammiert.'
         },
         {
           id: 3,
@@ -444,6 +463,14 @@ export default {
     }
   },
   methods: {
+    acceptCookies() {
+      localStorage.setItem('plistlabs-cookie-consent', 'accepted');
+      this.cookieConsent = true;
+    },
+    rejectCookies() {
+      localStorage.setItem('plistlabs-cookie-consent', 'rejected');
+      this.cookieConsent = true;
+    },
     showImpressum(e) {
       e.preventDefault();
       this.showImpressumModal = true;
@@ -459,12 +486,20 @@ export default {
       }
     },
     async submitForm() {
+      // Überprüfe Cookie-Consent
+      const cookieConsent = localStorage.getItem('plistlabs-cookie-consent');
+      if (cookieConsent === 'rejected') {
+        this.formMessage = '✗ Sie haben Cookies abgelehnt. Das Formular kann nicht versendet werden.';
+        this.formMessageType = 'error';
+        return;
+      }
+
       this.isSubmitting = true;
       this.formMessage = '';
 
       try {
         // Sende die E-Mail über einen einfachen Service
-        const response = await fetch('https://formspree.io/f/xyzabc', {
+        const response = await fetch('https://formspree.io/f/xldorvea', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

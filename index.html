@@ -440,8 +440,124 @@
       color: #1f2937;
     }
 
+    /* Contact Form */
+    .contact-form {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+      border: 1px solid #e5e7eb;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1f2937;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #0066cc;
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      background-color: #0066cc;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .form-submit:hover {
+      background-color: #0052a3;
+    }
+
+    .form-submit:disabled {
+      background-color: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    .form-message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .form-message.success {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+
+    .form-message.error {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .benefit-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 4px solid #0066cc;
+    }
+
+    .benefit-card h4 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #1f2937;
+    }
+
+    .benefit-card p {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
       .hero-content,
       .about-content,
       .footer-content {
@@ -468,6 +584,10 @@
 
       .section-title {
         font-size: 28px;
+      }
+
+      .hero-image {
+        height: 300px;
       }
     }
   </style>

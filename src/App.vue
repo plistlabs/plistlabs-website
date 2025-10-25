@@ -39,7 +39,7 @@
             <p>Wir entwickeln maßgeschneiderte KI-Lösungen, die wiederkehrende Routineaufgaben in Ihrer Kanzlei automatisieren – damit sich Ihr Team auf Beratung statt Dateneingabe konzentriert.</p>
             <div class="hero-buttons">
               <button class="btn-primary" @click="scrollToContact">Kostenlose Beratung</button>
-              <button class="btn-secondary">Mehr erfahren</button>
+              <button class="btn-secondary" @click="scrollToServices">Mehr erfahren</button>
             </div>
           </div>
           <div class="hero-image">
@@ -485,6 +485,12 @@ export default {
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
+    scrollToServices() {
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
       }
     },
     async submitForm() {

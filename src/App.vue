@@ -19,11 +19,12 @@
       <div class="container">
         <div class="header-content">
           <a href="#" class="logo">plistlabs</a>
-          <nav>
-            <a href="#services">Services</a>
-            <a href="#about">Über uns</a>
-            <a href="#contact">Kontakt</a>
-            <a href="#contact" class="btn-contact">Anfrage</a>
+          <button class="menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">☰</button>
+          <nav :class="{ active: mobileMenuOpen }">
+            <a href="#services" @click="mobileMenuOpen = false">Services</a>
+            <a href="#about" @click="mobileMenuOpen = false">Über uns</a>
+            <a href="#contact" @click="mobileMenuOpen = false">Kontakt</a>
+            <a href="#contact" class="btn-contact" @click="mobileMenuOpen = false">Anfrage</a>
           </nav>
         </div>
       </div>
@@ -309,6 +310,7 @@ export default {
     return {
       showImpressumModal: false,
       showDatenschutzModal: false,
+      mobileMenuOpen: false,
       cookieConsent: localStorage.getItem('plistlabs-cookie-consent') !== null,
       isSubmitting: false,
       formMessage: '',
@@ -499,7 +501,7 @@ export default {
 
       try {
         // Sende die E-Mail über einen einfachen Service
-        const response = await fetch('https://formspree.io/f/xldorvea', {
+        const response = await fetch('https://formspree.io/f/xyzabc', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

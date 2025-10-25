@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>plistlabs - KI-Automatisierung für Kanzleien</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #6b7280;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background-color: #6b7280;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0052cc;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #374151;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0052cc;
+    }
+
+    .btn-contact {
+      background-color: #d4af37;
+      color: #1f2937;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn-contact:hover {
+      background-color: #c49a27;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: #6b7280;
+      padding: 80px 0;
+      color: #1f2937;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero h1 .highlight {
+      color: #0052cc;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: #4b5563;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-primary {
+      background-color: #d4af37;
+      color: #1f2937;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #c49a27;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #0052cc;
+      padding: 14px 28px;
+      border: 2px solid #0052cc;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background-color: #0052cc;
+      color: white;
+    }
+
+    .hero-image {
+      background: linear-gradient(135deg, #0052cc 0%, #4f46e5 100%);
+      border-radius: 8px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+    }
+
+    /* Problems Section */
+    .problems {
+      background-color: #f3f4f6;
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 900;
+      margin-bottom: 50px;
+      color: #1f2937;
+    }
+
+    .section-title .highlight {
+      color: #c41e3a;
+    }
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .problem-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      border-top: 4px solid #c41e3a;
+    }
+
+    .problem-card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .problem-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #fecaca;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c41e3a;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .problem-card p {
+      color: #6b7280;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .problem-impact {
+      background-color: #fee2e2;
+      padding: 12px;
+      border-left: 4px solid #c41e3a;
+      color: #c41e3a;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* Solutions Section */
+    .solutions {
+      background-color: #6b7280;
+      padding: 80px 0;
+    }
+
+    .solutions .section-title {
+      color: #1f2937;
+      margin-bottom: 50px;
+    }
+
+    .solutions .section-title .highlight {
+      color: #d4af37;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .solution-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .solution-icon {
+      width: 60px;
+      height: 60px;
+      background-color: #dbeafe;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: #0052cc;
+      font-size: 28px;
+    }
+
+    .solution-card h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #1f2937;
+    }
+
+    .solution-card p {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Benefits Section */
+    .benefits {
+      background-color: #f3f4f6;
+      padding: 80px 0;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .benefit-item {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .benefit-number {
+      font-size: 36px;
+      font-weight: bold;
+      color: #0052cc;
+      min-width: 60px;
+    }
+
+    .benefit-content h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #1f2937;
+    }
+
+    .benefit-content p {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, #0052cc 0%, #4f46e5 100%);
+      padding: 60px 0;
+      text-align: center;
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .cta .btn-primary {
+      background-color: #d4af37;
+      color: #1f2937;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1f2937;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .problems-grid,
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 15px;
+        font-size: 14px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
+

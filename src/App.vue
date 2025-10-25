@@ -61,9 +61,9 @@
             <p>{{ service.description }}</p>
             <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
               <p style="font-weight: bold; color: #1f2937; margin-bottom: 10px;">Wie profitieren Sie davon:</p>
-              <ul style="color: #6b7280; font-size: 14px; line-height: 1.8;">
-                <li v-for="benefit in service.benefits" :key="benefit" style="margin-bottom: 8px;">✓ {{ benefit }}</li>
-              </ul>
+              <div style="color: #6b7280; font-size: 14px; line-height: 1.8;">
+                <div v-for="benefit in service.benefits" :key="benefit" style="margin-bottom: 8px;">✓ {{ benefit }}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -92,9 +92,9 @@
           </div>
           <div class="about-text">
             <h2>Über <span class="highlight">plistlabs</span></h2>
-            <p>Ich bin Daniel Plistiev, Gründer von plistlabs. Mit über 10 Jahren Erfahrung in der Steuerberatung und Prozessoptimierung habe ich erkannt, dass viele Kanzleien täglich Stunden mit Routineaufgaben verschwenden.</p>
+            <p>Ich bin Daniel Plistiev, Gründer von plistlabs. Mit mehreren Jahren Erfahrung in der Prozessoptimierung und Automatisierung habe ich erkannt, dass viele Kanzleien täglich Stunden mit Routineaufgaben verschwenden.</p>
             <p>Meine Mission: Steuerberatungen durch intelligente Automatisierung entlasten und ihnen ermöglichen, sich auf das zu konzentrieren, was wirklich zählt – die Beratung ihrer Mandanten.</p>
-            <p>Mit plistlabs biete ich maßgeschneiderte KI-Lösungen, die nahtlos in bestehende Systeme wie DATEV integrieren und sofort Ergebnisse liefern.</p>
+            <p>Mit plistlabs biete ich maßgeschneiderte KI-Lösungen, die nahtlos in bestehende Systeme integrieren und sofort Ergebnisse liefern.</p>
             <p class="name">Daniel Plistiev<br>Gründer & CEO, plistlabs</p>
           </div>
         </div>
@@ -238,15 +238,23 @@
         <h3>Unternehmensdaten</h3>
         <p>
           <strong>Firmenname:</strong> plistlabs<br>
+          <strong>Rechtsform:</strong> Einzelunternehmen<br>
           <strong>Inhaber:</strong> Daniel Plistiev<br>
           <strong>Adresse:</strong> Schweidlgasse 24, 1020 Wien, Österreich<br>
           <strong>UID-Nummer:</strong> ATU72102912<br>
-          <strong>E-Mail:</strong> info@plistlabs.at
+          <strong>E-Mail:</strong> info@plistlabs.at<br>
+          <strong>Telefon:</strong> +43 1 234 56789
         </p>
+        <h3>Geschäftstätigkeit</h3>
+        <p>plistlabs ist spezialisiert auf Prozessautomatisierung und KI-Lösungen für Steuerberatungen und Kanzleien. Wir entwickeln maßgeschneiderte Automatisierungslösungen, die bestehende Systeme und Workflows optimieren.</p>
         <h3>Haftungsausschluss</h3>
-        <p>Die Inhalte dieser Website werden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+        <p>Die Inhalte dieser Website werden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Die Verwendung der Website erfolgt auf eigenes Risiko des Benutzers.</p>
         <h3>Externe Links</h3>
-        <p>Unsere Website enthält Links zu externen Websites. Für den Inhalt dieser externen Seiten sind wir nicht verantwortlich.</p>
+        <p>Unsere Website enthält Links zu externen Websites. Für den Inhalt dieser externen Seiten sind wir nicht verantwortlich. Die Verantwortung für die verlinkten Inhalte trägt der jeweilige Betreiber der verlinkten Seite.</p>
+        <h3>Urheberrecht</h3>
+        <p>Die Inhalte und Werke auf dieser Website sind urheberrechtlich geschützt. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des Autors oder Erstellers.</p>
+        <h3>Datenschutz</h3>
+        <p>Informationen zum Datenschutz finden Sie in unserer Datenschutzerklärung.</p>
       </div>
     </div>
 
@@ -256,17 +264,21 @@
         <button class="modal-close" @click="showDatenschutzModal = false">✕</button>
         <h2>Datenschutzerklärung</h2>
         <h3>1. Verantwortliche Stelle</h3>
-        <p>Verantwortlich für die Datenverarbeitung ist: Daniel Plistiev, Schweidlgasse 24, 1020 Wien, Österreich</p>
+        <p>Verantwortlich für die Datenverarbeitung ist: Daniel Plistiev, Schweidlgasse 24, 1020 Wien, Österreich, E-Mail: info@plistlabs.at</p>
         <h3>2. Erhobene Daten</h3>
-        <p>Wir erheben personenbezogene Daten nur, wenn Sie uns diese freiwillig mitteilen (z.B. über Kontaktformulare).</p>
+        <p>Wir erheben personenbezogene Daten nur, wenn Sie uns diese freiwillig mitteilen, beispielsweise über unser Kontaktformular. Dies umfasst: Name, E-Mail-Adresse, Telefonnummer, Unternehmensname und die von Ihnen eingegebene Nachricht.</p>
         <h3>3. Verwendung der Daten</h3>
-        <p>Ihre Daten werden ausschließlich zur Beantwortung Ihrer Anfragen verwendet und nicht an Dritte weitergegeben.</p>
-        <h3>4. Ihre Rechte</h3>
-        <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch bezüglich Ihrer personenbezogenen Daten.</p>
-        <h3>5. Cookies</h3>
-        <p>Diese Website verwendet keine Tracking-Cookies. Technisch notwendige Cookies können verwendet werden.</p>
-        <h3>6. Kontakt</h3>
-        <p>Bei Fragen zur Datenschutzerklärung kontaktieren Sie uns unter: info@plistlabs.at</p>
+        <p>Ihre Daten werden ausschließlich zur Beantwortung Ihrer Anfragen und zur Kontaktaufnahme verwendet. Wir geben Ihre Daten nicht an Dritte weiter und verwenden sie nicht für Marketingzwecke, sofern Sie dem nicht zugestimmt haben.</p>
+        <h3>4. Speicherung und Sicherheit</h3>
+        <p>Wir speichern Ihre Daten nur so lange, wie dies für die Beantwortung Ihrer Anfrage erforderlich ist. Ihre Daten werden mit angemessenen technischen und organisatorischen Maßnahmen geschützt.</p>
+        <h3>5. Ihre Rechte</h3>
+        <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch bezüglich Ihrer personenbezogenen Daten. Sie können diese Rechte jederzeit ausüben, indem Sie uns kontaktieren.</p>
+        <h3>6. Cookies</h3>
+        <p>Diese Website verwendet keine Tracking-Cookies oder Analyse-Tools. Technisch notwendige Cookies werden nicht verwendet.</p>
+        <h3>7. Externe Dienste</h3>
+        <p>Das Kontaktformular nutzt Formspree.io zur E-Mail-Verarbeitung. Bitte beachten Sie die Datenschutzerklärung von Formspree.</p>
+        <h3>8. Kontakt und Beschwerden</h3>
+        <p>Bei Fragen zur Datenschutzerklärung oder zur Verarbeitung Ihrer Daten kontaktieren Sie uns unter: info@plistlabs.at</p>
       </div>
     </div>
   </div>
@@ -316,19 +328,19 @@ export default {
           id: 1,
           icon: '📄',
           title: 'AI-Beleg-Assistent',
-          description: 'Automatische Belegverarbeitung mit DATEV-Integration. E-Mails werden gescannt, Belege erkannt und Daten automatisch extrahiert.',
+          description: 'Automatische Belegverarbeitung. E-Mails werden gescannt, Belege erkannt und Daten automatisch extrahiert.',
           benefits: [
             'Zeitersparnis von 6-8 Stunden pro Woche',
             'Weniger Fehler bei der Dateneingabe',
-            'Nahtlose DATEV-Integration',
-            'Sofortige Verfügbarkeit der Daten'
+            'Sofortige Verfügbarkeit der Daten',
+            'Integration mit bestehenden Systemen'
           ]
         },
         {
           id: 2,
           icon: '📞',
           title: 'KI-Telefonassistent',
-          description: 'Intelligente Mandanten-Hotline, die Standardfragen beantwortet, Termine vereinbart und Informationen bereitstellt.',
+          description: 'Intelligente Mandanten-Hotline, die Standardfragen beantwortet und Termine vereinbart.',
           benefits: [
             'Verfügbarkeit 24/7 für Mandanten',
             'Automatische Terminvergabe',
@@ -340,7 +352,7 @@ export default {
           id: 3,
           icon: '💬',
           title: 'Mandanten-FAQ-Bot',
-          description: 'Automatische E-Mail-Antworten für häufig gestellte Fragen. Intelligente Weiterleitung komplexer Anfragen an Ihr Team.',
+          description: 'Automatische E-Mail-Antworten für häufig gestellte Fragen. Intelligente Weiterleitung komplexer Anfragen.',
           benefits: [
             'Sofortige Antworten auf Standardfragen',
             'Weniger E-Mails für Ihr Team',
@@ -352,7 +364,7 @@ export default {
           id: 4,
           icon: '👥',
           title: 'Mandanten-Onboarding',
-          description: 'Automatisierte Onboarding-Prozesse mit digitalen Formularen, automatischen Checklisten und Erinnerungen.',
+          description: 'Automatisierte Onboarding-Prozesse mit digitalen Formularen und automatischen Checklisten.',
           benefits: [
             'Standardisierte Prozesse',
             'Digitale Dokumentensammlung',
@@ -376,7 +388,7 @@ export default {
           id: 6,
           icon: '⚡',
           title: 'Prozessoptimierung',
-          description: 'Maßgeschneiderte Workflow-Automatisierung für Ihre spezifischen Anforderungen und Systeme.',
+          description: 'Maßgeschneiderte Workflow-Automatisierung für Ihre spezifischen Anforderungen.',
           benefits: [
             'Individuelle Lösungen',
             'Integration bestehender Systeme',
@@ -393,13 +405,13 @@ export default {
         },
         {
           id: 2,
-          title: '🔗 DATEV-Integration',
-          description: 'Alle unsere Services integrieren nahtlos mit DATEV. Keine komplizierten Systemwechsel erforderlich.'
+          title: '⚡ Schnelle Implementierung',
+          description: 'Die meisten Lösungen sind innerhalb von 1-2 Wochen einsatzbereit. Sie profitieren schnell von den Ergebnissen.'
         },
         {
           id: 3,
-          title: '⚡ Schnelle Implementierung',
-          description: 'Die meisten Lösungen sind innerhalb von 1-2 Wochen einsatzbereit. Sie profitieren schnell von den Ergebnissen.'
+          title: '🔧 Integration bestehender Systeme',
+          description: 'Wir integrieren nahtlos mit Ihren vorhandenen Tools. Keine komplizierten Systemwechsel erforderlich.'
         },
         {
           id: 4,

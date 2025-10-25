@@ -109,8 +109,8 @@
             <h2>Über <span class="highlight">plistlabs</span></h2>
             <p>Ich bin Daniel Plistiev, Gründer von plistlabs. Mit mehreren Jahren Erfahrung in der Prozessoptimierung und Automatisierung habe ich erkannt, dass viele Kanzleien täglich Stunden mit Routineaufgaben verschwenden.</p>
             <p>Meine Mission: Steuerberatungen durch intelligente Automatisierung entlasten und ihnen ermöglichen, sich auf das zu konzentrieren, was wirklich zählt – die Beratung ihrer Mandanten.</p>
-            <p>Mit plistlabs biete ich maßgeschneiderte KI-Lösungen, die nahtlos in bestehende Systeme integrieren und sofort Ergebnisse liefern.</p>
-            <p class="name">Daniel Plistiev<br>Gründer & CEO, plistlabs</p>
+            <p>Mit plistlabs biete ich maßgeschneiderte KI-Lösungen, die sofort Ergebnisse liefern.</p>
+            <p class="name">Daniel Plistiev<br>Gründer & CEO</p>
           </div>
         </div>
       </div>

@@ -61,7 +61,7 @@
           <div class="hero-content">
             <div>
               <h1>KI statt Klickarbeit - die <span class="highlight">smarte Kanzlei von morgen</span></h1>
-              <p>Wir entwickeln maßgeschneiderte KI-Lösungen, die wiederkehrende Routineaufgaben in Ihrer Kanzlei automatisieren – damit sich Ihr Team auf Beratung statt Dateneingabe konzentriert.</p>
+              <p>Wir entwickeln maßgeschneiderte KI-Lösungen, die wiederkehrende Routineaufgaben in Ihrer Steuerkanzlei automatisieren – damit sich Ihr Team auf Beratung statt Dateneingabe konzentriert.</p>
               <div class="hero-buttons">
                 <button class="btn-primary" @click="scrollToContact">Unverbindliche Beratung</button>
                 <button class="btn-secondary" @click="scrollToServices">Mehr erfahren</button>
@@ -232,8 +232,8 @@
           <h2 class="section-title">Fallstudie: <span class="highlight">Praxis in Aktion</span></h2>
           <div class="case-study-content">
             <div class="case-study-text">
-              <h3>Steuerkanzlei Müller & Partner - Wien</h3>
-              <p><strong>Das Problem:</strong> Die Kanzlei mit 8 Mitarbeitern verbrachte täglich 3-4 Stunden mit Terminvergaben am Telefon. Mandanten warteten oft mehrere Tage auf Rückrufe.</p>
+              <h3>Steuerkanzlei HWS - Dettingen</h3>
+              <p><strong>Das Problem:</strong> Die Kanzlei mit 6 Mitarbeitern verbrachte täglich 3-4 Stunden mit Terminvergaben am Telefon. Mandanten warteten oft mehrere Tage auf Rückrufe.</p>
               <p><strong>Die Lösung:</strong> Implementierung des KI-Telefonassistenten von Plistlabs.</p>
               <p><strong>Das Ergebnis:</strong></p>
               <ul class="case-results">
@@ -254,11 +254,11 @@
           <div class="faq-grid">
             <div class="faq-item">
               <h4>Wie funktioniert Ihre KI-Automatisierung konkret?</h4>
-              <p>Unsere KI analysiert Ihre Prozesse, identifiziert Automatisierungspotenziale und setzt diese schrittweise um. Alles läuft DSGVO-konform und sicher.</p>
+              <p>Wir analysieren Ihre Prozesse, identifizieren Automatisierungspotenziale und setzen diese schrittweise um. Alles läuft DSGVO-konform und sicher.</p>
             </div>
             <div class="faq-item">
               <h4>Wie lange dauert die Implementierung?</h4>
-              <p>Durchschnittlich 2-4 Wochen. Wir starten mit einer kostenlosen Analyse und setzen dann Schritt für Schritt um.</p>
+              <p>Durchschnittlich einige Wochen. Wir starten mit einer kostenlosen Analyse und setzen dann Schritt für Schritt um.</p>
             </div>
             <div class="faq-item">
               <h4>Funktioniert das mit unseren bestehenden Systemen?</h4>
@@ -266,7 +266,7 @@
             </div>
             <div class="faq-item">
               <h4>Wie sicher sind meine Daten?</h4>
-              <p>Höchste Priorität! DSGVO-konform, verschlüsselte Verbindungen, Daten bleiben in der EU. Keine Kompromisse beim Datenschutz.</p>
+              <p>Höchste Priorität! DSGVO-konform, Daten bleiben in der EU. Keine Kompromisse beim Datenschutz.</p>
             </div>
             <div class="faq-item">
               <h4>Können wir das vorher testen?</h4>

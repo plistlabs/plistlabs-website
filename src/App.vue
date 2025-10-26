@@ -9,7 +9,7 @@
           <a href="#services" @click="closeMenu">Services</a>
           <a href="#about" @click="closeMenu">Über uns</a>
           <a href="#contact" @click="closeMenu">Kontakt</a>
-          <a href="/agb" @click="closeMenu">AGB</a>
+          <a href="/agb.html" @click="closeMenu">AGB</a>
         </nav>
       </div>
     </header>
@@ -362,7 +362,7 @@
             <h4>Rechtliches</h4>
             <a href="#" @click="showImpressum">Impressum</a>
             <a href="#" @click="showDatenschutz">Datenschutzerklärung</a>
-            <a href="/agb">AGB</a>
+            <a href="/agb.html">AGB</a>
           </div>
           <div class="footer-section">
             <h4>Folgen Sie uns</h4>
